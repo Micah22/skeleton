@@ -14,16 +14,22 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(express.urlencoded({}))
 
-app.get('/', function (req, res) {
-	res.render('home');
-});
 
-app.post('/', function (req, res) {
-	res.render('ballot', {
-		voterId: req.body.voterId,
-		precinct: req.body.precinct
-	});
-});
+// database setup
+require("./models/db");
+
+// Require the specific schemas
+require("./models/race");
+
+
+
+// IMPORT THE CONTROLLER(S)
+const ballotController = require('./controllers/ballot controller')
+
+
+app.get('/', ballotController.homeRoute);
+
+app.post('/', ballotController.showBallotRoute);
 
 
 // 404 catch-all handler (middleware)
