@@ -1,5 +1,5 @@
 const ballotController = {
-   homeRoute: function (req, res) {
+    homeRoute: function (req, res) {
         res.render('home');
     },
     showBallotRoute: function (req, res) {
