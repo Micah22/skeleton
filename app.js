@@ -13,7 +13,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.static(__dirname + '/public'));
 
 app.use(express.urlencoded({}))
-
+s
 
 // database setup
 require("./models/db");
